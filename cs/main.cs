@@ -75,7 +75,7 @@ class main
             if (!EndsWith(args[0], ".cs")) { args[0] += ".cs"; }
             if (!EndsWith(args[1], ".exe")) { args[1] += ".exe"; }
 
-            StartEXE(cscDir, "/t:exe /out:\"" + args[1] + "\" \"C:\\Tools\\Utils.cs\" \"" + args[0] + "\"");
+            StartEXE(cscDir, "/t:exe /out:\"" + args[1] + "\" \"D:\\Projects\\Includes\\.cs\\*.cs\" \"" + args[0] + "\"");
             return;
         }
 
