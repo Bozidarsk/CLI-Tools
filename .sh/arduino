@@ -1,0 +1,2 @@
+arduino-cli compile -b arduino:avr:micro
+arduino-cli upload -b arduino:avr:micro -p COM3 -v
