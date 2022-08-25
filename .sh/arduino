@@ -1,2 +1,9 @@
+if [ $# -gt 0 ] &&  [ $1 == monitor ]; then
+  arduino-cli monitor -p COM3
+  exit
+fi
+
 arduino-cli compile -b arduino:avr:micro
-arduino-cli upload -b arduino:avr:micro -p COM3 -v
+if [ $? -eq 0 ]; then
+  arduino-cli upload -b arduino:avr:micro -p COM3 -v
+fi
