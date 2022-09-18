@@ -20,48 +20,6 @@ public class Color
 	}
 }
 
-public class Chunk 
-{
-	public int Length { set; get; }
-	public byte[] Type { set; get; }
-	public byte[] Data { set; get; }
-	public byte[] Crc { set; get; }
-
-	public void Print() 
-	{
-		Console.WriteLine("Chunk:");
-		Console.WriteLine("  Length: " + System.Convert.ToString(this.Length));
-		Console.WriteLine("  Type: " + System.Text.Encoding.UTF8.GetString(this.Type));
-
-		Console.Write("  Data: { ");
-		for (int i = 0; i < this.Length; i++) { string c = main.DecimalToHex((int)this.Data[i]); Console.Write(((c.Length == 1) ? "0" + c : c) + ((i >= this.Length - 1) ? " " : ", ")); }
-		Console.WriteLine("}");
-
-		Console.Write("  Crc: { ");
-		for (int i = 0; i < this.Crc.Length; i++) { string c = main.DecimalToHex((int)this.Crc[i]); Console.Write(((c.Length == 1) ? "0" + c : c) + ((i >= 4 - 1) ? " " : ", ")); }
-		Console.WriteLine("}");
-	}
-
-	public Chunk() {}
-	public Chunk(int Length, byte[] Type, byte[] Data, byte[] Crc) 
-	{
-		this.Length = Length;
-		this.Type = Type;
-		this.Data = Data;
-		this.Crc = Crc;
-	}
-
-	public static Chunk GetChunk(byte[] content, int index) 
-	{
-		Chunk chunk = new Chunk();
-		chunk.Length = (content[index] << 24) + (content[index + 1] << 16) + (content[index + 2] << 8) + (content[index + 3] << 0);
-		chunk.Type = main.GetBytesAt(content, index + 4, index + 7);
-		chunk.Data = (chunk.Length > 0) ? main.GetBytesAt(content, index + 8, index + 8 + chunk.Length - 1) : new[] { (byte)0x00 };
-		chunk.Crc = main.GetBytesAt(content, index + ((chunk.Length > 0) ? 9 : 8) + chunk.Length, index + ((chunk.Length > 0) ? 9 : 8) + chunk.Length + 3);
-		return chunk;
-	}
-}
-
 public class PNG 
 {
 	public readonly static string signature = "\x89PNG\x0d\x0a\x1a\x0a";
@@ -157,42 +115,89 @@ public class PNG
 
 		return content.ToArray();
 	}
-}
 
-public class main 
-{
-	public static void Error(string message) { Console.WriteLine(message); Environment.Exit(1); }
-	public static string DecimalToHex(int dec) 
+	public class Chunk 
 	{
-		string[] hexBy1 = { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "a", "b", "c", "d", "e", "f" };
-		int num = (int)Math.Floor((double)dec / 16);
-		string hex = hexBy1[dec % 16];
+		public int Length { set; get; }
+		public byte[] Type { set; get; }
+		public byte[] Data { set; get; }
+		public byte[] Crc { set; get; }
 
-		while (num > 0) 
+		public override string ToString() 
 		{
-			hex = hexBy1[num % 16] + hex;
-			num = (int)Math.Floor((double)num / 16);
+			string output = "";
+
+			output += "Chunk:\n";
+			output += "  Length: " + System.Convert.ToString(this.Length) + "\n";
+			output += "  Type: " + System.Text.Encoding.UTF8.GetString(this.Type) + "\n";
+
+			output += "  Data: { ";
+			for (int i = 0; i < this.Length; i++) { string c = Tools.Hex(this.Data[i], true); output += ((c.Length == 1) ? "0" + c : c) + ((i >= this.Length - 1) ? " " : ", "); }
+			output += "}\n";
+
+			output += "  Crc: { ";
+			for (int i = 0; i < this.Crc.Length; i++) { string c = Tools.Hex(this.Crc[i], true); output += ((c.Length == 1) ? "0" + c : c) + ((i >= 4 - 1) ? " " : ", "); }
+			output += "}\n";
+
+			return output;
 		}
 
-		return hex;
+		public Chunk() {}
+		public Chunk(int Length, byte[] Type, byte[] Data, byte[] Crc) 
+		{
+			this.Length = Length;
+			this.Type = Type;
+			this.Data = Data;
+			this.Crc = Crc;
+		}
+
+		public static Chunk GetChunk(byte[] content, int index) 
+		{
+			Chunk chunk = new Chunk();
+			chunk.Length = (content[index] << 24) + (content[index + 1] << 16) + (content[index + 2] << 8) + (content[index + 3] << 0);
+			chunk.Type = Tools.GetBytesAt(content, index + 4, index + 7);
+			chunk.Data = (chunk.Length > 0) ? Tools.GetBytesAt(content, index + 8, index + 8 + chunk.Length - 1) : new[] { (byte)0x00 };
+			chunk.Crc = Tools.GetBytesAt(content, index + ((chunk.Length > 0) ? 9 : 8) + chunk.Length, index + ((chunk.Length > 0) ? 9 : 8) + chunk.Length + 3);
+			return chunk;
+		}
+	}
+}
+
+public static class Tools 
+{
+	public static string Hex(uint x, bool trimZeroes) 
+	{
+		string hexChar = "0123456789abcdef";
+		string output = "";
+
+		for (int i = 0; i < sizeof(uint) * 2; i++) 
+		{ output = Convert.ToString(hexChar[(int)((x >> (i * 4)) & 0xf)]) + output; }
+
+		output = (trimZeroes) ? output.TrimStart('0') : output;
+		return (output.Length == 0) ? "00" : output;
 	}
 
-	public static byte[] GetBytesAt(byte[] _main, int startPos, int endPos) 
+	public static byte[] GetBytesAt(byte[] main, int startPos, int endPos) 
 	{
-	    if (_main == null || startPos < 0 || endPos <= 0 || endPos < startPos || endPos >= _main.Length) { return _main; }
+	    if (main == null || startPos < 0 || endPos <= 0 || endPos < startPos || endPos >= main.Length) { return main; }
 
 	    List<byte> output = new List<byte>((endPos - startPos) + 1);
 	    int i = startPos;
 	    int t = 0;
 	    while (t < (endPos - startPos) + 1) 
 	    {
-	        output.Add(_main[i]);
+	        output.Add(main[i]);
 	        i++;
 	        t++;
 	    }
 
 	    return output.ToArray();
 	}
+}
+
+public class main 
+{
+	public static void Error(string message) { Console.WriteLine(message); Environment.Exit(1); }
 
 	static void Main(string[] args) 
 	{
@@ -201,21 +206,24 @@ public class main
 		// if (GetBytesAt(image.content, 0, PNG.signature.Length - 1) != PNG.signature) { Error("Wrong signature."); }
 		// if (image.Chunks[0].Type != "IHDR") { Error("First chunk is not IHDR."); }
 
-		for (int i = 0; i < image.Chunks.Length; i++) 
-		{
-			Console.WriteLine(System.Text.Encoding.UTF8.GetString(image.Chunks[i].Type));
-		}
+		// for (int i = 0; i < image.Chunks.Length; i++) 
+		// {
+		// 	Console.WriteLine(System.Text.Encoding.UTF8.GetString(image.Chunks[i].Type));
+		// }
 
-		for (int i = 0; i < image.Chunks.Length; i++) 
-		{
-			switch (System.Text.Encoding.UTF8.GetString(image.Chunks[i].Type)) 
-			{
-				case "IDAT":
-					for (int b = 0; b < image.Chunks[i].Data.Length; b++) { Console.Write(image.Chunks[i].Data[b]); Console.Write(" "); }
-					Console.WriteLine("");
-					continue;
-			}
-		}
+		// for (int i = 0; i < image.Chunks.Length; i++) 
+		// {
+		// 	switch (System.Text.Encoding.UTF8.GetString(image.Chunks[i].Type)) 
+		// 	{
+		// 		case "IDAT":
+		// 			Console.WriteLine(image.Chunks[i].ToString());
+		// 			// for (int b = 0; b < image.Chunks[i].Data.Length; b++) { Console.Write(image.Chunks[i].Data[b]); Console.Write(" "); }
+		// 			// Console.WriteLine("");
+		// 			continue;
+		// 	}
+		// }
+
+		for (int i = 0; i < image.Chunks.Length; i++) { Console.WriteLine(image.Chunks[i].ToString()); }
 
 		File.WriteAllBytes("output.png", PNG.Encode(image));
 	}
