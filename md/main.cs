@@ -13,6 +13,7 @@ class main
 
 		html = 
 			"<head>\n" + 
+			"<meta charset=\"utf-8\">" + 
 			"<meta name=\"color-scheme\" content=\"light dark\">" + 
 			"<style>\n" + 
 			File.ReadAllText("C:\\Tools\\Source\\githubmd.css") + "\n" + 
