@@ -45,8 +45,8 @@ class main
 
     static void Main(string[] args) 
 	{
-		const string cscDirDefault = "C:\\Windows\\Microsoft.NET\\Framework\\v3.5\\csc.exe";
-		string cscDir = "C:\\Windows\\Microsoft.NET\\Framework\\v3.5\\csc.exe";
+		const string cscDirDefault = "C:\\Windows\\Microsoft.NET\\Framework\\v4.0.30319\\csc.exe";
+		string cscDir = "C:\\Windows\\Microsoft.NET\\Framework\\v4.0.30319\\csc.exe";
 		string helpMsg = "Compiler path: '" + cscDir + "'.\n\n" + "args[0] - source file name (if not specified the extention will be .cs).\nargs[1] - output file name (if not specified the extention will be .exe).\n\n-h - Displays this message.\n-u - Compiles with custom assemply ('C:\\Tools\\Utils.dll'). It must be the last argument!\n--changeCompilerPath [newPath] (--default - for the default path) - Changes the path of the compiler (csc.exe is the default).\n\nAnything else will be directly passed to the compiler!";
 
 		if (args.Length == 1) { if (args[0] == "help" || args[0] == "--help" || args[0] == "/help" || args[0] == "-?" || args[0] == "/?" || args[0] == "/h" || args[0] == "-h") { Console.WriteLine(helpMsg); return; } }

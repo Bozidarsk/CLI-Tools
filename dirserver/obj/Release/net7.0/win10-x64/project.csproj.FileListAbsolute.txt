@@ -1,0 +1,5 @@
+D:\Projects\CLI-Tools\dirserver\obj\Release\net7.0\win10-x64\project.csproj.AssemblyReference.cache
+D:\Projects\CLI-Tools\dirserver\obj\Release\net7.0\win10-x64\project.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projects\CLI-Tools\dirserver\obj\Release\net7.0\win10-x64\project.AssemblyInfoInputs.cache
+D:\Projects\CLI-Tools\dirserver\obj\Release\net7.0\win10-x64\project.AssemblyInfo.cs
+D:\Projects\CLI-Tools\dirserver\obj\Release\net7.0\win10-x64\project.csproj.CoreCompileInputs.cache

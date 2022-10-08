@@ -32,6 +32,7 @@ public class Attributes
     	_A.Add(FileAttributes.Temporary);
     	_A.Add(FileAttributes.Temporary);
     	_A.Add(FileAttributes.Temporary);
+    	_A.Add(FileAttributes.System);
 
     	List<string> _Str = new List<string>();
     	_Str.Add("hidden");
@@ -40,6 +41,7 @@ public class Attributes
     	_Str.Add("tmp");
     	_Str.Add("temp");
     	_Str.Add("temporary");
+    	_Str.Add("system");
 
     	A = _A;
     	Str = _Str;
@@ -107,24 +109,24 @@ class main
     static void MoveFile(string src, string dist) 
     {
     	if (src == "" || dist == "" || src == dist) { return; }
-    	string content = System.IO.File.ReadAllText(src);
-		System.IO.File.Delete(src);
+    	string content = File.ReadAllText(src);
+		File.Delete(src);
 
 		string fullDist = dist + "\\" + src;
-    	if (dist == "." || dist == ".\\") { src = ""; dist = System.IO.Directory.GetCurrentDirectory(); fullDist = dist; }
+    	if (dist == "." || dist == ".\\") { src = ""; dist = Directory.GetCurrentDirectory(); fullDist = dist; }
 
 		if (fullDist.Contains("\\\\\\")) { fullDist = fullDist.Replace("\\\\\\", "\\"); }
 		if (fullDist.Contains("\\\\")) { fullDist = fullDist.Replace("\\\\", "\\"); }
 		Console.WriteLine(content);
 
-		var file = System.IO.File.Create(fullDist); file.Close();
-		System.IO.File.WriteAllText(fullDist, content);
+		var file = File.Create(fullDist); file.Close();
+		File.WriteAllText(fullDist, content);
     }
 
     static void CopyFile(string src, string dist) 
     {
     	if (src == "" || dist == "") { return; }
-    	string content = System.IO.File.ReadAllText(src);
+    	string content = File.ReadAllText(src);
     	if (src == dist) { src += " (copy)"; }
 
 		string fullDist = dist + "\\" + src;
@@ -132,12 +134,26 @@ class main
 		if (fullDist.Contains("\\\\\\")) { fullDist = fullDist.Replace("\\\\\\", "\\"); }
 		if (fullDist.Contains("\\\\")) { fullDist = fullDist.Replace("\\\\", "\\"); }
 
-		System.IO.File.WriteAllText(fullDist, content);
+		File.WriteAllText(fullDist, content);
     }
 
 	static void Main(string[] args) 
 	{
 		if (args.Length <= 0) { return; }
+		if (args[0] == "help" || args[0] == "--help" || args[0] == "-h" || args[0] == "/h" || args[0] == "/?" || args[0] == "-?") 
+		{
+			Console.WriteLine(
+				"Usage:\n\tfile \"filename\" [option] [arg]\n\nOptions:\n" + 
+				"\t-wt \"text\"\tOverrides the file with text.\n" + 
+				"\t-at \"text\"\tAppends the file with text.\n" + 
+				"\t-a \"attribute\"\tSets attribute to the file. (hidden | readonly | normal | system | (tmp | temp | temporary))\n" + 
+				"\t-mv \"directory\"\tMoves the file to directory.\n" + 
+				"\t-cp \"directory\"\tCopies the file to directory.\n" + 
+				"\t-rm\tRemoves the file.\n" + 
+				"\t-mkdir \"directory\"\tMakes a new directory.\n" + 
+				"\t-rmdir \"directory\"\tRemoves the directory.\n"
+			);
+		}
 
 		int wt = Array.IndexOf(args, "-wt");
 		int at = Array.IndexOf(args, "-at");
@@ -146,11 +162,12 @@ class main
 		int mv = Array.IndexOf(args, "-mv");
 		int cp = Array.IndexOf(args, "-cp");
 
-		int del = Array.IndexOf(args, "-del");
+		int rm = Array.IndexOf(args, "-rm");
+		int rmdir = Array.IndexOf(args, "-rmdir");
 		int mkdir = Array.IndexOf(args, "-mkdir");
 
-		if (args.Length % 2 == 0 && del == -1 && mkdir == -1) { return; }
-		if (args[0].IndexOf(".") <= 0 && del == -1 && mkdir == -1) { return; }
+		if (args.Length % 2 == 0 && rm == -1 && mkdir == -1) { return; }
+		if (args[0].IndexOf(".") <= 0 && rm == -1 && mkdir == -1) { return; }
 
     	if (wt >= 0 && at >= 0) { return; }
     	if (mv >= 0 && cp >= 0) { return; }
@@ -159,7 +176,8 @@ class main
 		string extention = GetStringAt(args[0], args[0].IndexOf("."), args[0].Length - 1);
 		string newContent = "";
 
-		if (extention == ".cs" || extention == ".cpp") { newContent = File.ReadAllText("C:\\Tools\\Source\\default" + extention.Remove(0, 1).ToUpper() + ".txt"); }
+		try { newContent = File.ReadAllText("C:\\Tools\\Source\\default" + extention.Remove(0, 1)); }
+		catch {}
 
 		if (wt == -1 && at == -1) { File.WriteAllText(args[0], newContent); }
 		if (wt >= 0) { File.WriteAllText(args[0], args[wt + 1]); }
@@ -167,7 +185,8 @@ class main
 		if (a >= 0) { File.SetAttributes(args[0], attributes.Get(args[a + 1].ToLower())); }
 		if (mv >= 0) { MoveFile(args[0], args[mv + 1]); }
 		if (cp >= 0) { CopyFile(args[0], args[cp + 1]); }
-		if (del >= 0) { if (!Directory.Exists(args[del + 1])) { File.Delete(args[del + 1]); } else { Directory.Delete(args[del + 1]); } }
+		if (rm >= 0) { File.Delete(args[rm + 1]); }
+		if (rmdir >= 0) { Directory.Delete(args[rmdir + 1]); }
 		if (mkdir >= 0) { Directory.CreateDirectory(args[mkdir + 1]); }
 	}
 }
