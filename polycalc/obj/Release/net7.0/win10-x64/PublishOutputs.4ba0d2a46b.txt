@@ -1,0 +1,2 @@
+D:\Projects\PolynomialCalculator\bin\Release\net7.0\win10-x64\publish\project.exe
+D:\Projects\PolynomialCalculator\bin\Release\net7.0\win10-x64\publish\project.pdb
