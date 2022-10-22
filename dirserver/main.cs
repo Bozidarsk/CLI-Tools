@@ -22,8 +22,8 @@ class main
 		bool showWindow = (args.Length >= 3) ? ((args[2] == "true") ? true : false) : true;
 		string directory = (!dir.Contains(":")) ? Tools.FormatDirectory(System.IO.Directory.GetCurrentDirectory() + "\\" + dir) : dir;
 
-		HTTPServer server = new HTTPServer(WebTools.GetLocalIP(), port, new HTTPServer.ResponseMethod(HTTPServer.Response.GenerateDirectoryResponse), directory);
+
 		Console.Title = "Directory Listing for: '" + directory + "'";
-		server.Start();
+		new HTTPServer(new HTTPServer.ResponseMethod(HTTPServer.Response.GenerateDirectoryResponse), directory, port, WebTools.GetLocalIP(), "Directory Listing Server").Start();
 	}
 }

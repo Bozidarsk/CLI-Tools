@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "CDY64x+Rfu2AYVmvTB8DdZF1rNpCNeWIHRIFiiNmJnBR28H0Fj621aREeA05gyfprA5j0RsTpSWsXYRJZTe3cQ==",
+  "dgSpecHash": "Ch2ILk3/B85Alpo6oWq3OQCNTmVbNko07q3NNtjUW//68b5zleco6hqmI5JAC4RhX2AQi3PZ3Aaqbbdtp/IXxg==",
   "success": true,
   "projectFilePath": "D:\\Projects\\CLI-Tools\\dirserver\\project.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Bobi\\.nuget\\packages\\microsoft.win32.systemevents\\6.0.0\\microsoft.win32.systemevents.6.0.0.nupkg.sha512",
+    "C:\\Users\\Bobi\\.nuget\\packages\\system.drawing.common\\6.0.0\\system.drawing.common.6.0.0.nupkg.sha512",
     "C:\\Users\\Bobi\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x64\\7.0.0-rc.1.22426.10\\microsoft.netcore.app.runtime.win-x64.7.0.0-rc.1.22426.10.nupkg.sha512",
     "C:\\Users\\Bobi\\.nuget\\packages\\runtime.win-x64.microsoft.dotnet.ilcompiler\\7.0.0-rc.1.22426.10\\runtime.win-x64.microsoft.dotnet.ilcompiler.7.0.0-rc.1.22426.10.nupkg.sha512",
     "C:\\Users\\Bobi\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x64\\7.0.0-rc.1.22427.1\\microsoft.windowsdesktop.app.runtime.win-x64.7.0.0-rc.1.22427.1.nupkg.sha512",

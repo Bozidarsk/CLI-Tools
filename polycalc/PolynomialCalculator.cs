@@ -87,21 +87,16 @@ public static class PolynomialCalculator
 		return answers.ToArray();
 	}
 
-	private static string AddSpaces(int number) 
-	{
-		string output = number.ToString();
-		while (output.Length < 3) { output = " " + output; }
-		return output;
-	}
-
-	private static string FormatTable(int[][] table) 
+	private static string GetTable(int[][] table) 
 	{
 		string output = "";
 		for (int y = 0; y < table.Length; y++) 
 		{
 			for (int x = 0; x < table[y].Length; x++) 
 			{
-				output += AddSpaces(table[y][x]);
+				string number = table[y][x].ToString();
+				while (number.Length < 3) { number = " " + number; }
+				output += number;
 				output += (x == 0) ? "|  " : "  ";
 			}
 
@@ -119,7 +114,7 @@ public static class PolynomialCalculator
 
 		int[][] t;
 		int[] answers = GetAnswers(polynomial.Replace(" ", ""), out t);
-		table = FormatTable(t);
+		table = GetTable(t);
 		return (answers.Length > 0) ? Format(answers.ToArray()) : null;
 	}
 
@@ -142,7 +137,7 @@ public static class PolynomialCalculator
 		int[] answers = GetAnswers(polynomial.Remove(index), out t);
 		simplified = (answers.Length > 0) ? Format(answers.ToArray()) : null;
 		simplified += " " + operation + " 0";
-		table = FormatTable(t);
+		table = GetTable(t);
 		Array.Sort(answers);
 
 		List<Range> ranges = new List<Range>();
@@ -171,8 +166,8 @@ public static class PolynomialCalculator
 			if (!((operation[0] == '>' && ranges[i].positive) || (operation[0] == '<' && !ranges[i].positive)) || ranges[i].from == ranges[i].to) { continue; }
 
 			string range = ranges[i].ToString().Remove(0, 1);
-			if (operation.Length > 1) { range = range.Replace("(", "["); }
-			if (operation.Length > 1) { range = range.Replace(")", "]"); }
+			if (operation.Length > 1 && !ranges[i].from.Contains("inf")) { range = range.Replace("(", "["); }
+			if (operation.Length > 1 && !ranges[i].to.Contains("inf")) { range = range.Replace(")", "]"); }
 			output += range + "U";
 		}
 
