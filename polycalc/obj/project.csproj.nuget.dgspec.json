@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Projects\\PolynomialCalculator\\project.csproj": {}
+    "D:\\Projects\\CLI-Tools\\polycalc\\project.csproj": {}
   },
   "projects": {
-    "D:\\Projects\\PolynomialCalculator\\project.csproj": {
+    "D:\\Projects\\CLI-Tools\\polycalc\\project.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projects\\PolynomialCalculator\\project.csproj",
+        "projectUniqueName": "D:\\Projects\\CLI-Tools\\polycalc\\project.csproj",
         "projectName": "project",
-        "projectPath": "D:\\Projects\\PolynomialCalculator\\project.csproj",
+        "projectPath": "D:\\Projects\\CLI-Tools\\polycalc\\project.csproj",
         "packagesPath": "C:\\Users\\Bobi\\.nuget\\packages\\",
-        "outputPath": "D:\\Projects\\PolynomialCalculator\\obj\\",
+        "outputPath": "D:\\Projects\\CLI-Tools\\polycalc\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Bobi\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -40,6 +40,12 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
+          "dependencies": {
+            "System.Drawing.Common": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -74,7 +80,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100-rc.1.22431.12\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
         }
       },
       "runtimes": {
