@@ -196,3 +196,5 @@ D:\Projects\CLI-Tools\cmdcalc\obj\Release\net7.0\win10-x64\refint\project.dll
 D:\Projects\CLI-Tools\cmdcalc\obj\Release\net7.0\win10-x64\project.pdb
 D:\Projects\CLI-Tools\cmdcalc\obj\Release\net7.0\win10-x64\project.genruntimeconfig.cache
 D:\Projects\CLI-Tools\cmdcalc\obj\Release\net7.0\win10-x64\ref\project.dll
+D:\Projects\CLI-Tools\cmdcalc\bin\Release\net7.0\win10-x64\Microsoft.Win32.SystemEvents.dll
+D:\Projects\CLI-Tools\cmdcalc\bin\Release\net7.0\win10-x64\System.Drawing.Common.dll

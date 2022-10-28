@@ -1,6 +1,8 @@
 obj\Release\net7.0\win10-x64\project.dll
 -o:obj\Release\net7.0\win10-x64\native\project.obj
 -r:C:\Users\Bobi\.nuget\packages\microsoft.netcore.app.runtime.win-x64\7.0.0-rc.1.22426.10\runtimes\win-x64\lib\net7.0\WindowsBase.dll
+-r:C:\Users\Bobi\.nuget\packages\microsoft.win32.systemevents\6.0.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
+-r:C:\Users\Bobi\.nuget\packages\system.drawing.common\6.0.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
 -r:C:\Users\Bobi\.nuget\packages\runtime.win-x64.microsoft.dotnet.ilcompiler\7.0.0-rc.1.22426.10\framework\Microsoft.CSharp.dll
 -r:C:\Users\Bobi\.nuget\packages\runtime.win-x64.microsoft.dotnet.ilcompiler\7.0.0-rc.1.22426.10\framework\Microsoft.VisualBasic.Core.dll
 -r:C:\Users\Bobi\.nuget\packages\runtime.win-x64.microsoft.dotnet.ilcompiler\7.0.0-rc.1.22426.10\framework\Microsoft.VisualBasic.dll
@@ -193,7 +195,7 @@ obj\Release\net7.0\win10-x64\project.dll
 --appcontextswitch:RUNTIME_IDENTIFIER=win10-x64
 --directpinvoke:System.Globalization.Native
 --directpinvoke:System.IO.Compression.Native
---directpinvokelist:C:\Program Files\dotnet\sdk\7.0.100-rc.1.22431.12\Sdks\Microsoft.DotNet.ILCompiler\build\WindowsAPIs.txt
+--directpinvokelist:C:\Program Files\dotnet\sdk\7.0.100\Sdks\Microsoft.DotNet.ILCompiler\build\WindowsAPIs.txt
 --feature:Microsoft.Extensions.DependencyInjection.VerifyOpenGenericServiceTrimmability=true
 --feature:System.ComponentModel.TypeConverter.EnableUnsafeBinaryFormatterInDesigntimeLicenseContextSerialization=false
 --feature:System.Reflection.Metadata.MetadataUpdater.IsSupported=false

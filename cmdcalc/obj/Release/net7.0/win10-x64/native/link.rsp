@@ -29,7 +29,7 @@
 /INCREMENTAL:NO
 /SUBSYSTEM:CONSOLE
 /ENTRY:wmainCRTStartup
-/NATVIS:"C:\Program Files\dotnet\sdk\7.0.100-rc.1.22431.12\Sdks\Microsoft.DotNet.ILCompiler\build\NativeAOT.natvis"
+/NATVIS:"C:\Program Files\dotnet\sdk\7.0.100\Sdks\Microsoft.DotNet.ILCompiler\build\NativeAOT.natvis"
 /NODEFAULTLIB:libucrt.lib
 /DEFAULTLIB:ucrt.lib
 /OPT:REF

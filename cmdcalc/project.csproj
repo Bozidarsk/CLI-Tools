@@ -8,4 +8,12 @@
     <Configuration>Release</Configuration>
   </PropertyGroup>
 
+  <ItemGroup>
+  	<Compile Include="D:\Projects\Includes\.cs\*.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Drawing.Common" Version="6.0.0" />
+  </ItemGroup>
+
 </Project>
