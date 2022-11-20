@@ -120,7 +120,11 @@ class main
 		string path = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\MoneyTables\\";
 		if (!Directory.Exists(path)) { Directory.CreateDirectory(path); }
 
-		if (args.Length >= 2 && !File.Exists(path + args[1] + ".table")) { Console.WriteLine("Table '" + args[1] + "' does not exist."); Tools.Exit(ExitReason.Error); }
+		if (args.Length >= 2 && !File.Exists(path + args[1] + ".table") && args[0] != "new") 
+		{
+			Console.WriteLine("Table '" + args[1] + "' does not exist.");
+			Tools.Exit(ExitReason.Error);
+		}
 
 		switch (args[0]) 
 		{
