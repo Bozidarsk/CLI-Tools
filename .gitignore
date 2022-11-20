@@ -1,35 +1,38 @@
-ascii/bin
-ascii/obj
+email/
+hook/
 
-cat/bin
-cat/obj
+ascii/bin/
+ascii/obj/
 
-cmdcalc/bin
-cmdcalc/obj
+cat/bin/
+cat/obj/
 
-cs/bin
-cs/obj
+cmdcalc/bin/
+cmdcalc/obj/
 
-dirserver/bin
-dirserver/obj
+cs/bin/
+cs/obj/
 
-file/bin
-file/obj
+dirserver/bin/
+dirserver/obj/
 
-htmlserver/bin
-htmlserver/obj
+file/bin/
+file/obj/
 
-ls/bin
-ls/obj
+htmlserver/bin/
+htmlserver/obj/
 
-md/bin
-md/obj
+ls/bin/
+ls/obj/
 
-polycalc/bin
-polycalc/obj
+md/bin/
+md/obj/
 
-strconvert/bin
-strconvert/obj
+polycalc/bin/
+polycalc/obj/
 
-wallet/bin
-wallet/obj
+strconvert/bin/
+strconvert/obj/
+
+wallet/bin/
+wallet/obj/
