@@ -102,10 +102,10 @@ class main
 		if (args[0] == "help" || args[0] == "--help" || args[0] == "-h" || args[0] == "/h" || args[0] == "/?" || args[0] == "-?") 
 		{
 			Console.WriteLine(
-				"Usage:\n\tmoney <wallet> [command] <ammount>\n" + 
+				"Usage:\n\twallet <wallet> [command] <ammount>\n" + 
 				"\nCommands:\n" + 
 				"\tlist                           \tLists all wallets.\n" + 
-				"\tchange <tabe> <newBaseCurrency>\tChanges the base currency of this wallet.\n" + 
+				"\tchange <wallet> <newBaseCurrency>\tChanges the base currency of this wallet.\n" + 
 				"\tnew <wallet> <baseCurrency=EUR> \tCreates a new wallet.\n" + 
 				"\tdelete <wallet>                 \tDeletes the wallet.\n" + 
 				"\tadd <wallet> <ammount>          \tAdds the ammount to this wallet.\n" + 
