@@ -95,7 +95,13 @@ class main
 		{ "show", 2 },
 		{ "add", 4 },
 		{ "remove", 4 },
-		{ "search", 3 }
+		{ "search", 4 }
+	};
+
+	static Dictionary<string, Func<string, string, bool>> searchOptions = new Dictionary<string, Func<string, string, bool>> 
+	{
+		{ "--equals", Dictionary.Equals },
+		{ "--contains", Dictionary.Contains },
 	};
 
 	static void Main(string[] args) 
@@ -104,23 +110,28 @@ class main
 		if (args[0] == "help" || args[0] == "--help" || args[0] == "-h" || args[0] == "/h" || args[0] == "/?" || args[0] == "-?") 
 		{
 			Console.WriteLine(
-				"Usage:\n\tdictionary <type> [command] <lType> <rType>\n" + 
+				"Usage:\n\tdictionary <type> [command] <lType> <rType> [searchOptions]\n" + 
 				"\nCommands:\n" + 
 				"\tlist                         \tLists all dictionaries.\n" + 
 				"\tnew <type>                   \tCreates a new dictionary.\n" + 
 				"\tdelete <type>                \tDeletes the dictionary.\n" + 
 				"\tadd <type> <lType> <rType>   \tAdds the pair to this dictionary.\n" + 
 				"\tremove <type> <lType> <rType>\tRemoves the pair from this dictionary.\n" + 
-				"\tsearch <type> <key>          \tReturns all pairs which contains the key in this dictionary.\n" + 
+				"\tsearch <type> <key>          \tReturns all pairs which contains this key. (default option is --equals)\n" + 
 				"\tclear <type>                 \tClears the dictionary. (removes everything)\n" + 
 				"\tshow <type>                  \tShows everything from this dictionary.\n" + 
+				"\nSearch Options:\n" + 
+				"\t--equals\n" + 
+				"\t--contains\n" + 
 				"\nExample:\n" + 
 				"\tdictionary en-de add \"example\" \"beispiel\"\n"
 			);
 			Tools.Exit(ExitReason.HelpMessage);
 		}
 
-		try { if (args.Length != argc[args[0]] && args[0] != "new") { Tools.Exit(ExitReason.InvalidArguments); } }
+		if (args[0] == "search" && args.Length == 3) { args = Array2.Join(args, new string[] { "--equals" }); }
+
+		try { if (args.Length != argc[args[0]]) { Tools.Exit(ExitReason.InvalidArguments); } }
 		catch { Tools.Exit(ExitReason.InvalidArguments); }
 
 		string path = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\Dictionaries\\";
@@ -128,7 +139,7 @@ class main
 
 		if (args.Length >= 2 && !File.Exists(path + args[1] + ".dictionary") && args[0] != "new") 
 		{
-			Console.WriteLine("Type '" + args[1] + "' does not exist.");
+			Console.WriteLine("Dictionary '" + args[1] + "' does not exist.");
 			Tools.Exit(ExitReason.Error);
 		}
 
@@ -161,7 +172,7 @@ class main
 				if (args[0] == "show") { Console.WriteLine(dictionary.ToString()); }
 				if (args[0] == "search") 
 				{
-					Dictionary.Pair[] pairs = dictionary.Search(args[2]);
+					Dictionary.Pair[] pairs = dictionary.Search(args[2], searchOptions[args[3]]);
 					for (int i = 0; i < pairs.Length; i++) { Console.WriteLine(pairs[i].ToString()); }
 				}
 				if (args[0] == "clear") 
