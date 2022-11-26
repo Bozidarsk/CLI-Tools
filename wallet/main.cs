@@ -104,15 +104,15 @@ class main
 			Console.WriteLine(
 				"Usage:\n\twallet <wallet> [command] <ammount>\n" + 
 				"\nCommands:\n" + 
-				"\tlist                           \tLists all wallets.\n" + 
+				"\tlist                             \tLists all wallets.\n" + 
 				"\tchange <wallet> <newBaseCurrency>\tChanges the base currency of this wallet.\n" + 
-				"\tnew <wallet> <baseCurrency=EUR> \tCreates a new wallet.\n" + 
-				"\tdelete <wallet>                 \tDeletes the wallet.\n" + 
-				"\tadd <wallet> <ammount>          \tAdds the ammount to this wallet.\n" + 
-				"\tremove <wallet> <ammount>       \tRemoves the ammount from this wallet.\n" + 
-				"\thas <wallet> <ammount>          \tReturns the leftover ammount from this wallet. (-1 if it does not have)\n" + 
-				"\tclear <wallet>                  \tClears the wallet. (removes everything)\n" + 
-				"\tshow <wallet>                   \tShows everything from this wallet.\n"
+				"\tnew <wallet> <baseCurrency=EUR>  \tCreates a new wallet.\n" + 
+				"\tdelete <wallet>                  \tDeletes the wallet.\n" + 
+				"\tadd <wallet> <ammount>           \tAdds the ammount to this wallet.\n" + 
+				"\tremove <wallet> <ammount>        \tRemoves the ammount from this wallet.\n" + 
+				"\thas <wallet> <ammount>           \tReturns the leftover ammount from this wallet. (-1 if it does not have)\n" + 
+				"\tclear <wallet>                   \tClears the wallet. (removes everything)\n" + 
+				"\tshow <wallet>                    \tShows everything from this wallet.\n"
 			);
 			Tools.Exit(ExitReason.HelpMessage);
 		}
