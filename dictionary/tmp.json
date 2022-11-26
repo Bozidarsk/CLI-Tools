@@ -1,0 +1,580 @@
+{
+    "type": "gr-en",
+    "translation": [ 
+    {
+        "lType": [ "μηδεν", "0" ],
+        "rType": [ "zero", "0" ]
+    }, 
+    {
+        "lType": [ "ενα", "1" ],
+        "rType": [ "one", "1" ]
+    }, 
+    {
+        "lType": [ "δυο", "2" ],
+        "rType": [ "two", "2" ]
+    }, 
+    {
+        "lType": [ "τρια", "3" ],
+        "rType": [ "three", "3" ]
+    }, 
+    {
+        "lType": [ "τεσσερα", "4" ],
+        "rType": [ "four", "4" ]
+    }, 
+    {
+        "lType": [ "πεντε", "5" ],
+        "rType": [ "five", "5" ]
+    }, 
+    {
+        "lType": [ "εξι", "6" ],
+        "rType": [ "six", "6" ]
+    }, 
+    {
+        "lType": [ "επτα", "7" ],
+        "rType": [ "seven", "7" ]
+    }, 
+    {
+        "lType": [ "οκτω", "8" ],
+        "rType": [ "eight", "8" ]
+    }, 
+    {
+        "lType": [ "εννεα", "9" ],
+        "rType": [ "nine", "9" ]
+    }, 
+    {
+        "lType": [ "δεκα", "10" ],
+        "rType": [ "ten", "10" ]
+    }, 
+    {
+        "lType": [ "εντεκα", "11" ],
+        "rType": [ "eleven", "11" ]
+    }, 
+    {
+        "lType": [ "δωδεκα", "12" ],
+        "rType": [ "twelve", "12" ]
+    }, 
+    {
+        "lType": [ "δεκατρια", "13" ],
+        "rType": [ "thirteen", "13" ]
+    }, 
+    {
+        "lType": [ "δεκατεσσερα", "14" ],
+        "rType": [ "fourteen", "14" ]
+    }, 
+    {
+        "lType": [ "εικοσι", "20" ],
+        "rType": [ "twenty", "20" ]
+    }, 
+    {
+        "lType": [ "εικοσιτεσσερα", "23" ],
+        "rType": [ "twentythree" ]
+    }, 
+    {
+        "lType": [ "τριαντα", "30" ],
+        "rType": [ "thirty" ]
+    }, 
+    {
+        "lType": [ "σαραντα", "40" ],
+        "rType": [ "fourty" ]
+    }, 
+    {
+        "lType": [ "πενηντα", "50" ],
+        "rType": [ "fifty" ]
+    }, 
+    {
+        "lType": [ "εξηντα", "60" ],
+        "rType": [ "sixty" ]
+    }, 
+    {
+        "lType": [ "εβδοημτα", "70" ],
+        "rType": [ "seventy" ]
+    }, 
+    {
+        "lType": [ "ογδοντα", "80" ],
+        "rType": [ "eighty" ]
+    }, 
+    {
+        "lType": [ "ενεηντα", "90" ],
+        "rType": [ "ninety" ]
+    }, 
+    {
+        "lType": [ "εκατο", "100" ],
+        "rType": [ "hundred" ]
+    }, 
+    {
+        "lType": [ "λεγουμαι" ],
+        "rType": [ "my name is" ]
+    }, 
+    {
+        "lType": [ "ευχαριστω" ],
+        "rType": [ "thanks", "thank you" ]
+    }, 
+    {
+        "lType": [ "ευχαριστω πολυ" ],
+        "rType": [ "thank you very much" ]
+    }, 
+    {
+        "lType": [ "παρακαλω" ],
+        "rType": [ "please" ]
+    }, 
+    {
+        "lType": [ "καλημερα" ],
+        "rType": [ "good morning" ]
+    }, 
+    {
+        "lType": [ "καλησπερα" ],
+        "rType": [ "good evening" ]
+    }, 
+    {
+        "lType": [ "καληνυχτα" ],
+        "rType": [ "good night" ]
+    }, 
+    {
+        "lType": [ "αντιο" ],
+        "rType": [ "bye" ]
+    }, 
+    {
+        "lType": [ "μιλαω" ],
+        "rType": [ "i speak" ]
+    }, 
+    {
+        "lType": [ "γερμανικα" ],
+        "rType": [ "german" ]
+    }, 
+    {
+        "lType": [ "αγγλικα" ],
+        "rType": [ "english" ]
+    }, 
+    {
+        "lType": [ "Μιλας αγγλικα;" ],
+        "rType": [ "Do you speak english?" ]
+    }, 
+    {
+        "lType": [ "συγνωμη" ],
+        "rType": [ "excuse me" ]
+    }, 
+    {
+        "lType": [ "πολυ" ],
+        "rType": [ "a lot" ]
+    }, 
+    {
+        "lType": [ "λιγο" ],
+        "rType": [ "a little" ]
+    }, 
+    {
+        "lType": [ "ναι" ],
+        "rType": [ "yes" ]
+    }, 
+    {
+        "lType": [ "οχι" ],
+        "rType": [ "no" ]
+    }, 
+    {
+        "lType": [ "λιπαμαι" ],
+        "rType": [ "i am sorry" ]
+    }, 
+    {
+        "lType": [ "Ποσο κανει αυτο;" ],
+        "rType": [ "How much is this?" ]
+    }, 
+    {
+        "lType": [ "το νερο" ],
+        "rType": [ "water" ]
+    }, 
+    {
+        "lType": [ "το καροτο" ],
+        "rType": [ "carrot" ]
+    }, 
+    {
+        "lType": [ "το ρυζι" ],
+        "rType": [ "rice" ]
+    }, 
+    {
+        "lType": [ "ροζ" ],
+        "rType": [ "pink" ]
+    }, 
+    {
+        "lType": [ "το μινι μαρκετ" ],
+        "rType": [ "mini market" ]
+    }, 
+    {
+        "lType": [ "το βαζο" ],
+        "rType": [ "vase" ]
+    }, 
+    {
+        "lType": [ "το αβοκαντο" ],
+        "rType": [ "avocado" ]
+    }, 
+    {
+        "lType": [ "ειναι" ],
+        "rType": [ "it is" ]
+    }, 
+    {
+        "lType": [ "το βιντεο" ],
+        "rType": [ "video" ]
+    }, 
+    {
+        "lType": [ "κανει" ],
+        "rType": [ "he makes", "doing" ]
+    }, 
+    {
+        "lType": [ "αυτος" ],
+        "rType": [ "he" ]
+    }, 
+    {
+        "lType": [ "με" ],
+        "rType": [ "with" ]
+    }, 
+    {
+        "lType": [ "το σνακ" ],
+        "rType": [ "snak" ]
+    }, 
+    {
+        "lType": [ "το ουζο" ],
+        "rType": [ "ouzo" ]
+    }, 
+    {
+        "lType": [ "το μουσειο" ],
+        "rType": [ "museum" ]
+    }, 
+    {
+        "lType": [ "το σινεμα" ],
+        "rType": [ "cinema" ]
+    }, 
+    {
+        "lType": [ "το τοστ" ],
+        "rType": [ "tost" ]
+    }, 
+    {
+        "lType": [ "στο" ],
+        "rType": [ "at the", "in the" ]
+    }, 
+    {
+        "lType": [ "το κουσκους" ],
+        "rType": [ "couscous" ]
+    }, 
+    {
+        "lType": [ "η μαμα" ],
+        "rType": [ "mo" ]
+    }, 
+    {
+        "lType": [ "το μανγκο" ],
+        "rType": [ "mango" ]
+    }, 
+    {
+        "lType": [ "ο αντρας" ],
+        "rType": [ "man" ]
+    }, 
+    {
+        "lType": [ "η γυναικα" ],
+        "rType": [ "woman" ]
+    }, 
+    {
+        "lType": [ "το τσιγαρο" ],
+        "rType": [ "cigarette" ]
+    }, 
+    {
+        "lType": [ "ο αρχιτεκτονας" ],
+        "rType": [ "architect" ]
+    }, 
+    {
+        "lType": [ "ο σκελετος" ],
+        "rType": [ "skeleton" ]
+    }, 
+    {
+        "lType": [ "το λεμονι" ],
+        "rType": [ "lemon" ]
+    }, 
+    {
+        "lType": [ "ο γοριλας" ],
+        "rType": [ "gorilla" ]
+    }, 
+    {
+        "lType": [ "μεγαλο" ],
+        "rType": [ "big" ]
+    }, 
+    {
+        "lType": [ "χολ" ],
+        "rType": [ "hall", "hallway", "corridor" ]
+    }, 
+    {
+        "lType": [ "το θεατρο" ],
+        "rType": [ "ter" ]
+    }, 
+    {
+        "lType": [ "ο θρονος" ],
+        "rType": [ "throne" ]
+    }, 
+    {
+        "lType": [ "θα ητελα" ],
+        "rType": [ "i would like", "i want" ]
+    }, 
+    {
+        "lType": [ "η σουπα" ],
+        "rType": [ "soup" ]
+    }, 
+    {
+        "lType": [ "το σπαγγετι" ],
+        "rType": [ "spaghetti" ]
+    }, 
+    {
+        "lType": [ "η παπρικα" ],
+        "rType": [ "pepper" ]
+    }, 
+    {
+        "lType": [ "το τηλεφωνο" ],
+        "rType": [ "phone" ]
+    }, 
+    {
+        "lType": [ "ο καφες" ],
+        "rType": [ "coffee" ]
+    }, 
+    {
+        "lType": [ "το ψωμι" ],
+        "rType": [ "bread" ]
+    }, 
+    {
+        "lType": [ "το ψαρι" ],
+        "rType": [ "fish" ]
+    }, 
+    {
+        "lType": [ "το ξιδι" ],
+        "rType": [ "vinegar" ]
+    }, 
+    {
+        "lType": [ "το μηλο" ],
+        "rType": [ "apple" ]
+    }, 
+    {
+        "lType": [ "πινω" ],
+        "rType": [ "i drink" ]
+    }, 
+    {
+        "lType": [ "τρωω" ],
+        "rType": [ "i eat" ]
+    }, 
+    {
+        "lType": [ "τρωει" ],
+        "rType": [ "(he / she / it) eats" ]
+    }, 
+    {
+        "lType": [ "εσυ" ],
+        "rType": [ "you" ]
+    }, 
+    {
+        "lType": [ "αυτος / αυτη / αυτο" ],
+        "rType": [ "this / (he / she / it)" ]
+    }, 
+    {
+        "lType": [ "τα αγορια" ],
+        "rType": [ "boys" ]
+    }, 
+    {
+        "lType": [ "η εφημεριδα" ],
+        "rType": [ "newspaper" ]
+    }, 
+    {
+        "lType": [ "οι γυναικες" ],
+        "rType": [ "women" ]
+    }, 
+    {
+        "lType": [ "τα κοριτσια" ],
+        "rType": [ "girls" ]
+    }, 
+    {
+        "lType": [ "διαβαζουν" ],
+        "rType": [ "they read" ]
+    }, 
+    {
+        "lType": [ "διαβαζουμε" ],
+        "rType": [ "we read" ]
+    }, 
+    {
+        "lType": [ "οι αντρες" ],
+        "rType": [ "men" ]
+    }, 
+    {
+        "lType": [ "το γαλα" ],
+        "rType": [ "milk" ]
+    }, 
+    {
+        "lType": [ "το μενου" ],
+        "rType": [ "menu" ]
+    }, 
+    {
+        "lType": [ "τα παιδια" ],
+        "rType": [ "children", "kids" ]
+    }, 
+    {
+        "lType": [ "το παιδι" ],
+        "rType": [ "child", "kid" ]
+    }, 
+    {
+        "lType": [ "το βιβλιο" ],
+        "rType": [ "bible" ]
+    }, 
+    {
+        "lType": [ "εχω" ],
+        "rType": [ "i have" ]
+    }, 
+    {
+        "lType": [ "εχει" ],
+        "rType": [ "(he / she / it) has" ]
+    }, 
+    {
+        "lType": [ "εμεις" ],
+        "rType": [ "we" ]
+    }, 
+    {
+        "lType": [ "εχομε" ],
+        "rType": [ "we have" ]
+    }, 
+    {
+        "lType": [ "ειμαστε" ],
+        "rType": [ "we are" ]
+    }, 
+    {
+        "lType": [ "εσεις εισαστε" ],
+        "rType": [ "you are (plural)" ]
+    }, 
+    {
+        "lType": [ "εγω διαβαζω" ],
+        "rType": [ "i read" ]
+    }, 
+    {
+        "lType": [ "εσυ διαβαζις" ],
+        "rType": [ "you read" ]
+    }, 
+    {
+        "lType": [ "εσεις διαβαζετε" ],
+        "rType": [ "you (plural) read", "all of you read" ]
+    }, 
+    {
+        "lType": [ "καλα" ],
+        "rType": [ "well" ]
+    }, 
+    {
+        "lType": [ "πος" ],
+        "rType": [ "how", "what" ]
+    }, 
+    {
+        "lType": [ "εισαι" ],
+        "rType": [ "you are (informal)" ]
+    }, 
+    {
+        "lType": [ "ειστε" ],
+        "rType": [ "you are (formal)" ]
+    }, 
+    {
+        "lType": [ "σιγγνωμη" ],
+        "rType": [ "sorry" ]
+    }, 
+    {
+        "lType": [ "τα λεμε" ],
+        "rType": [ "see you later" ]
+    }, 
+    {
+        "lType": [ "Αμερικη" ],
+        "rType": [ "America" ]
+    }, 
+    {
+        "lType": [ "Αυστραλια" ],
+        "rType": [ "Australia" ]
+    }, 
+    {
+        "lType": [ "Οξφορδη" ],
+        "rType": [ "Oxford" ]
+    }, 
+    {
+        "lType": [ "Ευρωπη" ],
+        "rType": [ "Europe" ]
+    }, 
+    {
+        "lType": [ "μενει" ],
+        "rType": [ "(he / she / it) lives" ]
+    }, 
+    {
+        "lType": [ "το ταξι" ],
+        "rType": [ "tazi" ]
+    }, 
+    {
+        "lType": [ "απο την" ],
+        "rType": [ "from" ]
+    }, 
+    {
+        "lType": [ "ειμαι" ],
+        "rType": [ "i am" ]
+    }, 
+    {
+        "lType": [ "με συγχωρείτε" ],
+        "rType": [ "excuse me" ]
+    }, 
+    {
+        "lType": [ "δεν" ],
+        "rType": [ "not" ]
+    }, 
+    {
+        "lType": [ "στην" ],
+        "rType": [ "in" ]
+    }, 
+    {
+        "lType": [ "πολυ" ],
+        "rType": [ "very" ]
+    }, 
+    {
+        "lType": [ "χαρηκα" ],
+        "rType": [ "nice to meet you" ]
+    }, 
+    {
+        "lType": [ "οριστε" ],
+        "rType": [ "here you are", "here you go" ]
+    }, 
+    {
+        "lType": [ "λενε" ],
+        "rType": [ "name" ]
+    }, 
+    {
+        "lType": [ "ενταξει" ],
+        "rType": [ "ok" ]
+    }, 
+    {
+        "lType": [ "το μωρο" ],
+        "rType": [ "the baby" ]
+    }, 
+    {
+        "lType": [ "η μητερα" ],
+        "rType": [ "the mother" ]
+    }, 
+    {
+        "lType": [ "ο γονιος" ],
+        "rType": [ "the parent" ]
+    }, 
+    {
+        "lType": [ "οι γονεις" ],
+        "rType": [ "the parents" ]
+    }, 
+    {
+        "lType": [ "ο πατερας" ],
+        "rType": [ "the father" ]
+    }, 
+    {
+        "lType": [ "η κορη" ],
+        "rType": [ "the daughter" ]
+    }, 
+    {
+        "lType": [ "αδελφος" ],
+        "rType": [ "brother" ]
+    }, 
+    {
+        "lType": [ "η αδελφη" ],
+        "rType": [ "the sister" ]
+    }, 
+    {
+        "lType": [ "γιος" ],
+        "rType": [ "son" ]
+    }, 
+    {
+        "lType": [  ],
+        "rType": [  ]
+    } ]
+}
