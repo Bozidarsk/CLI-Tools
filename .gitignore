@@ -1,5 +1,4 @@
 email/
-hook/
 
 ascii/bin/
 ascii/obj/
@@ -12,6 +11,9 @@ cmdcalc/obj/
 
 cs/bin/
 cs/obj/
+
+dictionary/bin/
+dictionary/obj/
 
 dirserver/bin/
 dirserver/obj/
